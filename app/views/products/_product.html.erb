@@ -1,17 +1,15 @@
 
- <% @products.each do |product| %>
-        
-      <div class="card" style="width: 13rem; background: black;">
-      
+      <div class="card" style="width: 13rem;">
+        <%= image_tag product.photo %>
         <div class="card-body">
-          <h5 class="card-title" >Nombre Producto: <%= product.name %></h5>
-          <p class="card-text">Precio: <%=  product.price %></p>
+          <h5 class="card-title" ><%= product.name %></h5>
+          <p class="card-text">Precio: <%= product.price %></p>
             <a href="<%= product_orders_path(product) %>" data-method="post"><i class="fas fa-shopping-cart"></i>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button>
             </a>
         </div>
       </div>
-  <% end %>
+
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
